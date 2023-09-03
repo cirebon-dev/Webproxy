@@ -286,6 +286,7 @@ class Location {
 * Input wrapper for incoming data
 ******************************************************************/
 
+#[AllowDynamicProperties]
 class Input {
 
 	# Set up inputs
