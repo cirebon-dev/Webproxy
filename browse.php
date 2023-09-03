@@ -902,10 +902,11 @@ class Request {
 
 	public function readHeader($handle, $header) {
 
-		# Extract the status code (can occur more than once if 100 continue)
-		if ( $this->status == 0 || ( $this->status == 100 && ! strpos($header, ':') ) ) {
-			$this->status = substr($header, 9, 3);
-		}
+	# Extract the status code (can occur more than once if 100 continue)
+    if ( $this->status == 0 || ( $this->status == 100 && ! strpos($header, ':') ) ) {
+        if ( substr($header,0,8) == 'Status: ')
+            $this->status = intval(substr($header, 9, 3));
+    }
 
 		# Attempt to extract header name and value
 		$parts = explode(':', $header, 2);
