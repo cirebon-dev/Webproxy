@@ -656,9 +656,9 @@ if ( $options['allowCookies'] ) {
 if ( ! empty($_POST) ) {
 
 	# enable backward compatibility with cURL's @ option for uploading files in PHP 5.5 and 5.6
-	if (version_compare(PHP_VERSION, '5.5')>=0) {
+	/**if (version_compare(PHP_VERSION, '5.5')>=0) {
 		$toSet[CURLOPT_SAFE_UPLOAD] = false;
-	}
+	}**/
 
 	# Attempt to get raw POST from the input wrapper
 	if ( ! ($tmp = file_get_contents('php://input')) ) {
@@ -722,7 +722,7 @@ if ( ! empty($_POST) ) {
 
 					# And add all files to the post
 					foreach ( $flattened as $key => $value ) {
-						$tmp[$key] = '@' . $value;
+						$tmp[$key] = new \CURLFile($value);
 					}
 
 				} else {
@@ -733,7 +733,7 @@ if ( ! empty($_POST) ) {
 					}
 
 					# Add to array with @ - tells cURL to upload this file
-					$tmp[$name] = '@' . $file['tmp_name'];
+					$tmp[$name] = new \CURLFile($file['tmp_name']);
 
 				}
 
