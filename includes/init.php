@@ -13,6 +13,8 @@
 * Initialise
 ******************************************************************/
 
+# default user agent
+$default_ua_browser = "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1";
 # function to check https deeply
 function is_user_https(){
 	if (isset($_SERVER['HTTPS']) &&
@@ -350,7 +352,7 @@ if ( $CONFIG['override_javascript'] ) {
 
 if ( ! isset($_SESSION['custom_browser']) ) {
 	$_SESSION['custom_browser'] = array(
-		'user_agent'	=> isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '',
+		'user_agent'	=> $default_ua_browser,
 		'referrer'		=> 'real',
 		'tunnel'		=> '',
 		'tunnel_port'	=> '',
@@ -1000,4 +1002,3 @@ function glype_session_id() {
 # Proxify is a registered trademark of UpsideOut, Inc. All rights reserved.
 function proxifyURL($url, $givenFlag = false) {return proxyURL($url,$givenFlag);}
 function deproxifyURL($url, $givenFlag = false) {return deproxyURL($url,$givenFlag);}
-$default_ua_browser = "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1";
