@@ -115,7 +115,7 @@ if (preg_match('#^localhost#i', $URL['host'])) {
 
 $host = $URL['host'];
 
-#$host = gethostbyname($host); # uncomment for more complete protection
+$host = gethostbyname($host); # uncomment for more complete protection
 
 if (preg_match('#^\d+$#', $host)) { # decimal IPs
 	$host = implode('.', array($host>>24&255, $host>>16&255, $host>>8&255, $host&255));
@@ -423,6 +423,8 @@ if ( isset($_SERVER['HTTP_ACCEPT_CHARSET']) ) {
 # Send user agent
 if ( $_SESSION['custom_browser']['user_agent'] ) {
 	$toSet[CURLOPT_USERAGENT] = $_SESSION['custom_browser']['user_agent'];
+} else {
+	$toSet[CURLOPT_USERAGENT] = $default_ua_browser;
 }
 
 # Set referrer
