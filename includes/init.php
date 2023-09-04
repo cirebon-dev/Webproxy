@@ -13,6 +13,18 @@
 * Initialise
 ******************************************************************/
 
+# function to check https deeply
+function is_user_https(){
+	if (isset($_SERVER['HTTPS']) &&
+    ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+    isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+    $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    return true;
+}
+else {
+  return false;
+}
+}
 # Choose error reporting levels
 error_reporting(E_ALL);
 ini_set('display_errors', 0); # Always report but don't display on live installation
@@ -24,7 +36,7 @@ define('SCRIPT_NAME', 'browse.php');
 define('COOKIE_PREFIX', 'c');
 
 # Running on HTTPS?
-define('HTTPS', ( empty($_SERVER['HTTPS']) || strtolower($_SERVER['HTTPS']) == 'off' ? false : true ));
+define('HTTPS', is_user_https());
 
 # Compatibility mode - you can disable this to test if your setup is forwards compatible.
 # Backwards compatiblity is frequently removed so keep up to date! Checking this is
