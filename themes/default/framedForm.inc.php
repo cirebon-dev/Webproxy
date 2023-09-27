@@ -1,6 +1,14 @@
-<style type="text/css">
+<?php
+# declare(strict_types=1);
+
+/*******************************************************************
+* WARNING!! this Glype fork version by guangrei or cirebon-dev.
+* 
+******************************************************************/
+?>
+<style>
    /* Make room for the mini-form */
-   html body { margin-top: 60px; }
+   html body { margin-top: 70px; }
    
    /* Reset all styles */
    #include * {

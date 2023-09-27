@@ -1,4 +1,10 @@
 <?php
+# declare(strict_types=1);
+
+/*******************************************************************
+* WARNING!! this Glype fork version by guangrei or cirebon-dev.
+* 
+******************************************************************/
 /*******************************************************************
 * Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
@@ -1373,8 +1379,6 @@ OUT;
 
 		echo <<<OUT
 		<p>This script provides an easy to use interface for managing your Glype. Use the navigation above to get started.</p>
-		<h2>Latest Glype news...</h2>
-		<iframe scrolling="no" src="{$self}?fetch=news" style="width: 100%; height:150px; border: 1px solid #ccc;" onload="setTimeout('updateLatestVersion()',1000);"></iframe>
 		<br><br>
 
 		<h2>Checking environment...</h2>

@@ -1,4 +1,10 @@
 <?php
+# declare(strict_types=1);
+
+/*******************************************************************
+* WARNING!! this Glype fork version by guangrei or cirebon-dev.
+* 
+******************************************************************/
 /*******************************************************************
 * Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
@@ -23,7 +29,7 @@
 ******************************************************************/
 
 // Website name
-$themeReplace['site_name'] = $_SERVER['HTTP_HOST'].' Glype&reg; proxy';
+$themeReplace['site_name'] = "Webproxy";
 
 // Meta description
 $themeReplace['meta_description'] = <<<OUT

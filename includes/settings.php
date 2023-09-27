@@ -1,4 +1,10 @@
 <?php
+# declare(strict_types=1);
+
+/*******************************************************************
+* WARNING!! this Glype fork version by guangrei or cirebon-dev.
+* 
+******************************************************************/
 /*******************************************************************
 * Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
@@ -36,7 +42,7 @@ $CONFIG['enable_blockscript'] = false;
 $CONFIG['theme'] = 'default';
 
 # Run plugins on these websites
-$CONFIG['plugins'] = 'facebook.com,google.com,hotmail.com,live.com,msn.com,myspace.com,twitter.com,yahoo.com,youtube.com,ytimg.com';
+$CONFIG['plugins'] = '"';
 
 # Temporary directory used by the script. Many features require
 # write permission to the temporary directory. Ensure this
@@ -88,7 +94,7 @@ $CONFIG['unique_urls'] = false;
 
 # This option prevents users "hotlinking" directly to a proxied
 # page and forces all users to first visit the index page.
-$CONFIG['stop_hotlinking'] = true;
+$CONFIG['stop_hotlinking'] = false;
 
 # If the above option is enabled, you can add individual referrers
 # that are allowed to bypass the hotlinking protection.
@@ -220,7 +226,7 @@ $CONFIG['options']['showForm'] = array(
 	'title'	 => 'Show Form',
 	'desc'	 => 'This provides a mini form at the top of each page to allow you to quickly jump to another site without returning to our homepage.',
 	'default' => true,
-	'force'	 => true
+	'force'	 => false
 );
 
 $CONFIG['options']['allowCookies'] = array(

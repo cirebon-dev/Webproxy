@@ -1,4 +1,10 @@
 <?php
+# declare(strict_types=1);
+
+/*******************************************************************
+* WARNING!! this Glype fork version by guangrei or cirebon-dev.
+* 
+******************************************************************/
 /*******************************************************************
 * Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
@@ -17,6 +23,10 @@
 
 # Load global file
 require 'includes/init.php';
+if (count(@$adminDetails)===0) {
+	header("Location: ".GLYPE_URL."/admin.php");
+    exit;
+}
 
 # Send our no-cache headers
 sendNoCache();
@@ -88,25 +98,26 @@ if ( isset($_GET['e']) && isset($phrases[$_GET['e']]) ) {
 	}
 
 	# Finally add it to the $themeReplace array to get it in there
-	$themeReplace['error'] = '<div id="error">' . $error . '</div>';
+	$themeReplace['error'] = '<article class="message is-danger">
+  <div class="message-header"><p>ERROR!</p></div>  <div class="message-body">' . $error . '</article></div>';
 
 	# And a link to try again?
-	if ( ! empty($_GET['return']) ) {
+	/***if ( ! empty($_GET['return']) ) {
 		$themeReplace['error'] .= '<p style="text-align:right">[<a href="' . htmlentities($_GET['return']) . '">Reload ' . htmlentities(deproxyURL($_GET['return'])) . '</a>]</p>';
-	}
+	}***/
 }
 
 /*****************************************************************
 * Check PHP version
 ******************************************************************/
 
-if ( version_compare(PHP_VERSION, 5) < 0 ) {
-	$themeReplace['error'] = '<div id="error">You need PHP 5 to run this script. You are currently running ' . PHP_VERSION . '</div>';
+if ( version_compare(PHP_VERSION, "8") < 0 ) {
+	$themeReplace['error'] = '<article class="message is-danger">
+  <div class="message-header"><p>ERROR!</p></div>
+  <div class="message-body">You need PHP 8 to run this script. You are currently running ' . PHP_VERSION . '</div>
+</article>';
 }
 
-if (count($adminDetails)===0) {
-	header("HTTP/1.1 302 Found"); header("Location: admin.php"); exit;
-}
 
 
 /*****************************************************************

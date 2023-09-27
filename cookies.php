@@ -1,4 +1,10 @@
 <?php
+# declare(strict_types=1);
+
+/*******************************************************************
+* WARNING!! this Glype fork version by guangrei or cirebon-dev.
+* 
+******************************************************************/
 /*******************************************************************
 * Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
@@ -29,17 +35,19 @@ ob_start();
 ******************************************************************/
 
 echo <<<OUT
-	<h2 class="first">Manage Cookies</h2>
+	<h2 class="title is-4">Manage Cookies</h2>
 	<p>You can view and delete cookies set on your computer by sites accessed through our service. Your cookies are listed below:</p>
 	<form action="includes/process.php?action=cookies" method="post">
-		<table cellpadding="2" cellspacing="0" align="center">
+		<table class="table is-fullwidth">
+                    <thead>
 			<tr>
-				<th width="33%">Website</th>
-				<th width="33%">Name</th>
-				<th width="33%">Value</th>
+				<th>Website</th>
+				<th>Name</th>
+				<th>Value</th>
 				<th>&nbsp;</th>
 			</tr>
-
+</thead>
+                    <tbody>
 OUT;
 
 
@@ -204,12 +212,20 @@ OUT;
 ******************************************************************/
 
 echo <<<OUT
-			<tr>
-				<th colspan="3" align="right"><input type="submit" value="Delete"></th>
-				<th><input type="checkbox" name="checkall"  onclick="selectAll(this)"></th>
-			</tr>
-		</table>
-	</form>
+</tbody>
+			  </table>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-danger" type="submit">Delete</button>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox" name="checkall" onclick="selectAll(this)"> Select All
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
 	<script type="text/javascript">
 		function selectAll(checkbox) {
 			var theForm = checkbox.form;

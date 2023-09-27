@@ -1,3 +1,11 @@
+<?php
+# declare(strict_types=1);
+
+/*******************************************************************
+* WARNING!! this Glype fork version by guangrei or cirebon-dev.
+* 
+******************************************************************/
+?>
 <html>
 <head>
 	<title>Security Warning</title>

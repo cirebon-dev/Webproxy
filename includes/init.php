@@ -1,4 +1,10 @@
 <?php
+# declare(strict_types=1);
+
+/*******************************************************************
+* WARNING!! this Glype fork version by guangrei or cirebon-dev.
+* 
+******************************************************************/
 /*******************************************************************
 * Glype is copyright and trademark 2007-2016 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
@@ -887,13 +893,14 @@ function error($type, $allowReload=false) {
 	}
 
 	# Finally add it to the $themeReplace array to get it in there
-	$themeReplace['error'] = '<div id="error">' . $errorText . '</div>';
+	$themeReplace['error'] = '<article class="message is-danger">
+  <div class="message-header"><p>ERROR!</p></div>  <div class="message-body">'   .$errorText. '</article></div>';
 
 	# And a link to try again?
-	$return=currentURL();
+	/***$return=currentURL();
 	if (strlen($return)>0) {
 		$themeReplace['error'] .= '<p style="text-align:right">[<a href="' . htmlentities($return) . '">Reload ' . htmlentities(deproxyURL($return)) . '</a>]</p>';
-	}
+	}***/
 
 	# Start with an empty array
 	$toShow = array();
