@@ -1,4 +1,5 @@
-![Screenshot](screenshot.png)
+[![status workflow test](https://github.com/cirebon-dev/Webproxy/actions/workflows/php.yml/badge.svg)](https://github.com/cirebon-dev/Webproxy/actions)
+![Screenshot](screenshot.jpg)
 
 Webproxy is [glype](https://github.com/vincentclee/glype) fork version.
 
@@ -18,4 +19,4 @@ then open `http://your-host:8080/admin.php`
 
 ## BUG
 
-there is many modern website that not work properly with proxy.
+there is still many modern website that not work properly with proxy.
