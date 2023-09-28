@@ -1,6 +1,21 @@
-# glype
-Glype proxy is a free, web-based proxy script written in PHP. It downloads web pages requested by the user and forwards them to the user.
+![Screenshot](screenshot.png)
 
-**References**
+Webproxy is [glype](https://github.com/vincentclee/glype) fork version.
 
-* http://www.glype.com/
+## INSTALLATION
+
+require php 8.2 and up.
+
+clone/put all files from this repository into your public path then open `http://your-site/admin.php` or using docker
+
+```
+$ git clone https://github.com/cirebon-dev/Webproxy
+$ cd Webproxy
+$ docker build -t glype .
+$ docker run --restart --name glype -p 8080:80 glype
+```
+then open `http://your-host:8080/admin.php`
+
+## BUG
+
+there is many modern website that not work properly with proxy.

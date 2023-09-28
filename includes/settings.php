@@ -225,7 +225,7 @@ $CONFIG['options']['encodePage'] = array(
 $CONFIG['options']['showForm'] = array(
 	'title'	 => 'Show Form',
 	'desc'	 => 'This provides a mini form at the top of each page to allow you to quickly jump to another site without returning to our homepage.',
-	'default' => true,
+	'default' => false,
 	'force'	 => false
 );
 
@@ -260,8 +260,8 @@ $CONFIG['options']['stripJS'] = array(
 $CONFIG['options']['stripObjects'] = array(
 	'title'	 => 'Remove Objects',
 	'desc'	 => 'You can increase page load times by removing unnecessary Flash, Java and other objects. If not removed, these may also compromise your anonymity.',
-	'default' => true,
-	'force'	 => false
+	'default' => false,
+	'force'	 => true
 );
 
 
