@@ -13,7 +13,7 @@ clone/put all files from this repository into your public path then open `http:/
 $ git clone https://github.com/cirebon-dev/Webproxy
 $ cd Webproxy
 $ docker build -t glype .
-$ docker run --restart --name glype -p 8080:80 glype
+$ docker run --restart --name glype -p 8080:8080 glype
 ```
 then open `http://your-host:8080/admin.php`
 
