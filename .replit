@@ -1,0 +1,10 @@
+run = "PHP_CLI_SERVER_WORKERS=10 php -S 0.0.0.0:8000 -t ."
+
+entrypoint = "README.md"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["sh", "-c", "php -S 0.0.0.0:8000 -t ."]
+deploymentTarget = "cloudrun"
