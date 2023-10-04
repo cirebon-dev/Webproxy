@@ -23,7 +23,7 @@
 
 # Load global file
 require 'includes/init.php';
-if (count(@$adminDetails)===0) {
+if (@$adminDetails === NULL) {
 	header("Location: ".GLYPE_URL."/admin.php");
     exit;
 }

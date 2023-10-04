@@ -17,6 +17,8 @@ $ docker run --restart --name glype -p 8080:8080 glype
 ```
 then open `http://your-host:8080/admin.php`
 
+you can also run Webproxy from replit.com by select import from github.
+
 ## BUG
 
 there is still many modern website that not work properly with proxy.
